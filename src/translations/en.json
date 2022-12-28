@@ -100,13 +100,13 @@
       "catchline": {
         "label": "Surtitle",
         "placeholder": "Enter a surtitle, a catchline",
-        "error": "Enter a valid text",
+        "error": "Please enter a valid text",
         "hint": "Will feature on top of the section's title. Optionnal. 10 to 50 chars."
       },
       "heading": {
-        "label": "Section's title",
-        "placeholder": "Entrez un titre",
-        "error": "Entrez un titre valide",
+        "label": "Section's heading",
+        "placeholder": "Enter a heading",
+        "error": "Please enter a valid heading",
         "hint": "Optionnel. Entre 10 et 100 caractères."
       },
       "subheading": {

@@ -27,7 +27,7 @@ const AddSectionButtons = () => {
     <Flex
       alignItems={"center"}
       gap={4}
-      wrap={"flex-wrap"}
+      wrap={"wrap"}
       justifyContent={"center"}
     >
       {Object?.entries(schemas)?.map(([key, value]) => (
