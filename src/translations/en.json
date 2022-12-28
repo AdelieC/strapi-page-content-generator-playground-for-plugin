@@ -1,0 +1,206 @@
+{
+  "plugin.name": "Générateur de requête complexes pour lister une collection en front",
+  "label": "Requête complexe sur une collection",
+  "description": "Sélectionnez d'abord une resource, puis ajoutez les limites, groupe et filtres que vous voulez appliquer.",
+  "heading": "Requête complexe pour lister une collection",
+  "loading": "Chargement des resources...",
+  "missing-schema": "Aucun schéma de validation pour le champ",
+  "add-section-button": {
+    "hero": "Nouvelle section hero",
+    "list": "Nouvelle section de liste",
+    "gallery": "Nouvelle section d'images",
+    "text": "Nouvelle section de texte"
+  },
+  "fieldsets": {
+    "base": {
+      "delete": "Supprimer",
+      "heading": "Informations de base de la section",
+      "fields": {
+        "name": {
+          "label": "Nom de la section",
+          "placeholder": "Entrez un nom qui servira d'id",
+          "error": "Entrez un nom valide",
+          "hint": "Ce nom servira d'id et de tag à la section. Entre 3 et 60 caractères."
+        },
+        "catchline": {
+          "label": "Surtitre de la section",
+          "placeholder": "Entrez un surtitre, une phrase d'accroche",
+          "error": "Entrez un nom valide",
+          "hint": "Apparaîtra au dessus du titre de la section. Optionnel. Entre 10 et 50 caractères."
+        },
+        "heading": {
+          "label": "Titre de la section",
+          "placeholder": "Entrez un titre",
+          "error": "Entrez un titre valide",
+          "hint": "Optionnel. Entre 10 et 100 caractères."
+        },
+        "subheading": {
+          "label": "Sous-titre de la section",
+          "placeholder": "Entrez un sous-titre",
+          "error": "Entrez un sous-titre valide",
+          "hint": "Optionnel. Entre 10 et 100 caractères."
+        }
+      }
+    },
+    "buttons": {
+      "heading": "Bouton n°",
+      "delete": "Supprimer le bouton",
+      "add": "Ajouter un bouton",
+      "label": {
+        "label": "Label du bouton",
+        "placeholder": "Votre label"
+      },
+      "variant": {
+        "label": "Style du bouton",
+        "placeholder": "Sélectionnez un style"
+      },
+      "href": {
+        "label": "Adresse de lien externe",
+        "placeholder": "Ex : https://votre-lien.com"
+      },
+      "to": {
+        "label": "Chemin de lien interne",
+        "placeholder": "Ex : /slug-de-la-page"
+      }
+    },
+    "filters": {
+      "heading": "Ajoutez des filtres à la requête",
+      "list": {
+        "empty": "Aucun filtre pour l'instant",
+        "attribute": "Filtrer sur",
+        "operator": "Opérateur",
+        "value": "Valeur",
+        "delete": "Supprimer le filtre"
+      },
+      "attribute": {
+        "label": "Filtrer sur",
+        "placeholder": "Sélectionnez un attribut",
+        "error": "Attribut requis",
+        "hint": "Sélectionnez la colonne sur laquelle appliquer le filtre"
+      },
+      "operator": {
+        "label": "Opérateur de filtre",
+        "placeholder": "Sélectionnez un opérateur",
+        "error": "Opérateur requis",
+        "hint": "Sélectionnez l'opération de filtre souhaitée",
+        "operators": {
+          "$eq": "égal(e)",
+          "$eqi": "égal(e) (insensible)",
+          "$ne": "pas égal(e)",
+          "$in": "dans ces valeurs",
+          "$notIn": "pas dans ces valeurs",
+          "$lt": "plus petit que",
+          "$lte": "plus petit ou égal à",
+          "$gt": "plus grand que",
+          "$gte": "plus grand ou égal à",
+          "$between": "compris entre",
+          "$contains": "contient",
+          "$notContains": "ne contient pas",
+          "$containsi": "contient (insensible)",
+          "$notContainsi": "ne contient pas (insensible)",
+          "$startsWith": "commence par",
+          "$endsWith": "fini par",
+          "$null": "est nul(le)",
+          "$notNull": "n'est pas nul(le)"
+        }
+      },
+      "value": {
+        "label": "Valeur correspondante",
+        "placeholder": "Entrez la valeur souhaitée",
+        "error": "Valeur requise",
+        "hint": "Entrez le résultat de l'opération choisie sur l'attribut"
+      },
+      "add": "Ajouter le filtre"
+    },
+    "resource": {
+      "heading": "Choisissez une ressource à lister",
+      "label": "Resource à lister",
+      "placeholder": "Sélectionnez une resource",
+      "error": "Resource requise",
+      "hint": "Les resources qui s'affichent correspondent aux collections créées"
+    },
+    "group-by": {
+      "heading": "Attribut par lequel grouper les éléments",
+      "attribute": {
+        "label": "Grouper par",
+        "placeholder": "Sélectionnez un attribut"
+      },
+      "nested-attribute": {
+        "hint": "L'attribut sélectionné est une relation. Veuillez choisir un des attributs de cette relation.",
+        "label": "Attribut de la relation par lequel grouper",
+        "placeholder": "Sélectionnez l'attribut de la relation choisie"
+      }
+    },
+    "limit": {
+      "heading": "Nombre max d'éléments à retourner",
+      "label": "Nombre d'éléments maximun",
+      "placeholder": "Entrez un nombre entier"
+    }
+  },
+
+  "complex-query-fieldset": {
+    "empty-resource": "Veuillez sélectionner une resource pour continuer."
+  },
+
+  "list-section-form": {
+    "heading": "Section de liste n°"
+  },
+  "text-section-form": {
+    "heading": "Section de texte n°",
+    "images-fieldset": {
+      "heading": "Image(s) de la section",
+      "empty": "Pas encore d'image sélectionnée",
+      "label": "Ajoutez une image",
+      "placeholder": "Sélectionnez une image pour l'ajouter",
+      "delete": "Retirer l'image",
+      "hint": "Ces images seront affichées à côté et sous les textes de la section"
+    },
+    "text-fieldset": {
+      "heading": "Texte de la section",
+      "label": "Votre texte",
+      "placeholder": "Entrez votre texte ici...",
+      "hint": "Ce texte apparaîtra entre le sous-titre et les boutons de cette section."
+    }
+  },
+  "gallery-section-form": {
+    "heading": "Section d'images n°",
+    "images-fieldset": {
+      "heading": "Collection d'image",
+      "empty": "Pas encore d'image sélectionnée",
+      "label": "Ajoutez une image",
+      "placeholder": "Sélectionnez une image pour l'ajouter",
+      "delete": "Retirer l'image",
+      "hint": "Ces images apparaîtront dans la gallerie d'images sous les titres/sous-titres"
+    }
+  },
+  "hero-section-form": {
+    "heading": "Section hero n°",
+    "images-fieldset": {
+      "heading": "Image de fond de la section",
+      "empty": "Pas encore d'image de fond",
+      "label": "Choisissez une image",
+      "placeholder": "Sélectionnez une image pour l'ajouter",
+      "delete": "Retirer l'image",
+      "hint": "Il s'agit de l'image qui s'affichera en fond de la section"
+    },
+    "color-fieldset": {
+      "heading": "Couleur de fond de la section",
+      "label": "Choisissez une couleur de fond",
+      "placeholder": "Sélectionnez une couleur",
+      "hint": "Couleur qui s'affichera en fond de cette section"
+    },
+    "text-fieldset": {
+      "heading": "Texte de la section",
+      "label": "Votre texte",
+      "placeholder": "Entrez votre texte ici...",
+      "hint": "Ce texte apparaîtra entre le sous-titre et les boutons de cette section."
+    }
+  },
+  "colors": {
+    "primary": "Primaire",
+    "secondary": "Secondaire",
+    "neutral": "Neutre",
+    "accent": "Accentuée",
+    "warning": "Attention"
+  }
+}
