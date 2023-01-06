@@ -74,7 +74,9 @@
           "primary": "Primary",
           "secondary": "Secondary",
           "warning": "Warning",
-          "accent": "Accent"
+          "accent": "Accent",
+          "neutral-medium": "Neutral medium",
+          "info": "Information"
         }
       },
       "href": {

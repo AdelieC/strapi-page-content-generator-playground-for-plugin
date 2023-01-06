@@ -1,7 +1,7 @@
 {
-  "name": "strapi-page-content-generator-playground-for-plugin",
+  "name": "playground-for-page-content-generator-strpi-plugin",
   "version": "1.0.0",
-  "description": "Playground to develop a strapi plugin for generating pages content (sections) in the form of one json object, that with be saved as the json value of a custom field.",
+  "description": "This is a dev environnement mimicking the structure and behavior of a strapi custom plugin with custom field. There is no server, so the fake api calls are just fetching the content of a json file. The page content generator plugin aims to create json sections for front pages.",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
