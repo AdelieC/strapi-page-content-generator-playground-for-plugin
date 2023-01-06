@@ -4,7 +4,6 @@
   "description": "Multichamps dynamiques pour générer du contenu json pour la collection Page",
   "heading": "Contenu json",
   "loading": "Chargement des resources...",
-  "missing-schema": "Aucun schéma de validation pour le champ",
   "info": {
     "missing-schema": "Vérifiez /utils/schemas. Type du champ erroné ou manquant.",
     "waiting-for": "Pour continuer, veuillez choisir une valeur pour",

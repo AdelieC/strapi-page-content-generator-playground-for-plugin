@@ -4,7 +4,6 @@
   "description": "Dynamic form to generate json content for front end pages",
   "heading": "Json content",
   "loading": "Loading resources...",
-  "missing-schema": "Aucun schéma de validation pour le champ",
   "info": {
     "missing-schema": "Check /utils/schemas. Wrong or missing field type.",
     "waiting-for": "To continue, please choose a value for",
