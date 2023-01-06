@@ -1,4 +1,4 @@
-import { object, string, number, date, InferType, array, mixed } from "yup";
+import { object, string, number, array, mixed } from "yup";
 
 export const colorStyleSchema = string()
   .oneOf([
@@ -8,7 +8,7 @@ export const colorStyleSchema = string()
     "warning",
     "neutral",
     "neutral-medium",
-    "info",
+    "info"
   ])
   .default("primary");
 
@@ -20,7 +20,7 @@ export const buttonSchema = object({
     .meta({ type: "string", baseTradId: "sections.buttons.label" }),
   variant: colorStyleSchema.meta({
     type: "enum",
-    baseTradId: "sections.buttons.variant",
+    baseTradId: "sections.buttons.variant"
   }),
   href: string()
     .url()
@@ -30,8 +30,8 @@ export const buttonSchema = object({
     source: "pages",
     optionsValue: "slug",
     optionsLabel: "nav_title",
-    baseTradId: "sections.buttons.to",
-  }),
+    baseTradId: "sections.buttons.to"
+  })
 });
 
 export const baseSectionSchema = object({
@@ -58,25 +58,25 @@ export const baseSectionSchema = object({
     .meta({ type: "string", baseTradId: "sections.base.subheading" }),
   background_color: colorStyleSchema.meta({
     type: "enum",
-    baseTradId: "sections.base.background-color",
+    baseTradId: "sections.base.background-color"
   }),
   buttons: array(buttonSchema).meta({
     type: "multiple",
     baseTradId: "sections.base.buttons",
-    iconName: "buttons",
-  }),
+    iconName: "buttons"
+  })
 });
 
 export const imageSchema = object({
   id: number().integer().positive(),
-  url: string().url(),
+  url: string().url()
 });
 
 export const filterSchema = object({
   attribute: string().required().meta({
     type: "attribute",
     target: "resource",
-    baseTradId: "sections.filters.attribute",
+    baseTradId: "sections.filters.attribute"
   }),
   operator: string()
     .required()
@@ -98,11 +98,11 @@ export const filterSchema = object({
       "$startsWith",
       "$endsWith",
       "$null",
-      "$notNull",
+      "$notNull"
     ])
     .default("$eq")
     .meta({ type: "enum", baseTradId: "sections.filters.operator" }),
   value: mixed()
     .required()
-    .meta({ type: "string", baseTradId: "sections.filters.value" }),
+    .meta({ type: "string", baseTradId: "sections.filters.value" })
 });

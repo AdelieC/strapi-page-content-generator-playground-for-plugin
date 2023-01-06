@@ -1,10 +1,5 @@
-import { string, array, object } from "yup";
-import {
-  baseSectionSchema,
-  buttonSchema,
-  imageSchema,
-  colorStyleSchema,
-} from "./common";
+import { string, array } from "yup";
+import { baseSectionSchema, imageSchema } from "./common";
 
 export default baseSectionSchema.shape({
   text: string()
@@ -13,5 +8,5 @@ export default baseSectionSchema.shape({
   images: array(imageSchema)
     .meta({ type: "images", baseTradId: "sections.gallery.images" })
     .min(2)
-    .required(),
+    .required()
 });

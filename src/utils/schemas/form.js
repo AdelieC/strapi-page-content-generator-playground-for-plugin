@@ -1,10 +1,5 @@
 import { string, array, object, boolean } from "yup";
-import {
-  baseSectionSchema,
-  buttonSchema,
-  imageSchema,
-  colorStyleSchema,
-} from "./common";
+import { baseSectionSchema } from "./common";
 
 const fieldTypeSchema = string()
   .oneOf(["textarea", "text", "tel", "email", "checkbox", "radio", "number"])
@@ -35,12 +30,12 @@ const fieldSchema = object({
     .meta({ type: "string", baseTradId: "sections.form.fields.hint-message" }),
   fieldType: fieldTypeSchema.meta({
     type: "enum",
-    baseTradId: "sections.form.fields.field-type",
+    baseTradId: "sections.form.fields.field-type"
   }),
-  isRequired: fieldTypeSchema.meta({
+  isRequired: boolean().meta({
     type: "toggle",
-    baseTradId: "sections.form.fields.is-required",
-  }),
+    baseTradId: "sections.form.fields.is-required"
+  })
 });
 
 export default baseSectionSchema.shape({
@@ -52,18 +47,18 @@ export default baseSectionSchema.shape({
     source: "routes",
     optionsValue: "path",
     optionsLabel: "path",
-    baseTradId: "sections.form.action",
+    baseTradId: "sections.form.action"
   }),
   method: methodSchema.meta({
     type: "enum",
-    baseTradId: "sections.form.method",
+    baseTradId: "sections.form.method"
   }),
   hasCaptcha: boolean().meta({
     type: "toggle",
-    baseTradId: "sections.form.has-captcha",
+    baseTradId: "sections.form.has-captcha"
   }),
   submitLabel: string().required().meta({
     type: "string",
-    baseTradId: "sections.form.submit-label",
-  }),
+    baseTradId: "sections.form.submit-label"
+  })
 });
