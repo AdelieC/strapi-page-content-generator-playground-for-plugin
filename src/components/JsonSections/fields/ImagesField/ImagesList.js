@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { IconButton, Grid, GridItem, Box } from "@strapi/design-system";
-import getTrad from "../../../utils/getTrad";
+import { getTrad } from "../../../../utils/getTrad";
 import { useIntl } from "react-intl";
 import DynamicIcon from "../../base/icons/DynamicIcon";
 import { useField } from "formik";
@@ -38,7 +38,7 @@ const ImagesList = ({ name, remove, baseTradId }) => {
               onClick={() => remove(i)}
               label={formatMessage({
                 id: getTrad(`${baseTradId}.delete`),
-                defaultMessage: "Remove"
+                defaultMessage: "Remove",
               })}
               noBorder
               icon={<DynamicIcon iconName={"trash"} />}

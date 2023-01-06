@@ -3,7 +3,7 @@ import { IconButton } from "@strapi/design-system";
 import { useIntl } from "react-intl";
 
 import DynamicIcon from "./icons/DynamicIcon";
-import getTrad from "../../utils/getTrad";
+import { getTrad } from "../../../utils/getTrad";
 import AccordionLayout from "./AccordionLayout";
 import FieldsList from "./FieldsList";
 
@@ -19,14 +19,14 @@ const Fieldset = ({ fields, name, baseTradId, remove, index, iconName }) => {
       iconName={iconName}
       heading={`${formatMessage({
         id: getTrad(`${baseTradId}.heading`),
-        defaultMessage: name
+        defaultMessage: name,
       })}${index + 1}`}
       action={
         <IconButton
           onClick={() => remove(index)}
           label={formatMessage({
             id: getTrad(`${baseTradId}.delete`),
-            defaultMessage: "Remove"
+            defaultMessage: "Remove",
           })}
           noBorder
           icon={<DynamicIcon iconName={"trash"} />}

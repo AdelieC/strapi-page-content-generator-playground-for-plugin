@@ -1,11 +1,11 @@
 import React, { memo } from "react";
 
-import schemas from "../../../utils/schemas";
+import schemas from "../../../../utils/schemas";
 import { useIntl } from "react-intl";
-import getTrad from "../../../utils/getTrad";
+import { getTrad } from "../../../../utils/getTrad";
 import { Button, Flex } from "@strapi/design-system";
 import DynamicIcon from "../icons/DynamicIcon";
-import { useSectionsServiceContext } from "../../../utils/providers/SectionsProvider";
+import { useSectionsServiceContext } from "../../../../utils/providers/SectionsProvider";
 import { v4 as uuid } from "uuid";
 
 const generateSectionFromType = (type) => {
@@ -24,12 +24,7 @@ const AddSectionButtons = () => {
   const { formatMessage } = useIntl();
 
   return (
-    <Flex
-      alignItems={"center"}
-      gap={4}
-      wrap={"flex-wrap"}
-      justifyContent={"center"}
-    >
+    <Flex alignItems={"center"} gap={4} wrap={"wrap"} justifyContent={"center"}>
       {Object?.entries(schemas)?.map(([key, value]) => (
         <Button
           key={`button${key}`}
@@ -39,7 +34,7 @@ const AddSectionButtons = () => {
         >
           {formatMessage({
             id: getTrad(`sections.${key}.add`),
-            defaultMessage: `Add ${key} section`
+            defaultMessage: `Add ${key} section`,
           })}
         </Button>
       ))}

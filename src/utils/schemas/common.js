@@ -1,5 +1,39 @@
 import { object, string, number, date, InferType, array, mixed } from "yup";
 
+export const colorStyleSchema = string()
+  .oneOf([
+    "primary",
+    "secondary",
+    "accent",
+    "warning",
+    "neutral",
+    "neutral-medium",
+    "info",
+  ])
+  .default("primary");
+
+export const buttonSchema = object({
+  label: string()
+    .required()
+    .min(2)
+    .max(30)
+    .meta({ type: "string", baseTradId: "sections.buttons.label" }),
+  variant: colorStyleSchema.meta({
+    type: "enum",
+    baseTradId: "sections.buttons.variant",
+  }),
+  href: string()
+    .url()
+    .meta({ type: "string", baseTradId: "sections.buttons.href" }),
+  to: string().meta({
+    type: "relation",
+    source: "pages",
+    optionsValue: "slug",
+    optionsLabel: "nav_title",
+    baseTradId: "sections.buttons.to",
+  }),
+});
+
 export const baseSectionSchema = object({
   type: string()
     .oneOf(["hero", "gallery", "text", "list"])
@@ -21,41 +55,28 @@ export const baseSectionSchema = object({
   subheading: string()
     .min(2)
     .max(150)
-    .meta({ type: "string", baseTradId: "sections.base.subheading" })
-});
-
-export const buttonSchema = object({
-  label: string()
-    .required()
-    .min(2)
-    .max(30)
-    .meta({ type: "string", baseTradId: "sections.buttons.label" }),
-  variant: string()
-    .oneOf(["primary", "secondary", "accent", "warning"])
-    .default("secondary")
-    .meta({ type: "enum", baseTradId: "sections.buttons.variant" }),
-  href: string()
-    .url()
-    .meta({ type: "string", baseTradId: "sections.buttons.href" }),
-  to: string().meta({
-    type: "relation",
-    source: "pages",
-    optionsValue: "slug",
-    optionsLabel: "nav_title",
-    baseTradId: "sections.buttons.to"
-  })
+    .meta({ type: "string", baseTradId: "sections.base.subheading" }),
+  background_color: colorStyleSchema.meta({
+    type: "enum",
+    baseTradId: "sections.base.background-color",
+  }),
+  buttons: array(buttonSchema).meta({
+    type: "multiple",
+    baseTradId: "sections.base.buttons",
+    iconName: "buttons",
+  }),
 });
 
 export const imageSchema = object({
   id: number().integer().positive(),
-  url: string().url()
+  url: string().url(),
 });
 
 export const filterSchema = object({
   attribute: string().required().meta({
     type: "attribute",
     target: "resource",
-    baseTradId: "sections.filters.attribute"
+    baseTradId: "sections.filters.attribute",
   }),
   operator: string()
     .required()
@@ -77,11 +98,11 @@ export const filterSchema = object({
       "$startsWith",
       "$endsWith",
       "$null",
-      "$notNull"
+      "$notNull",
     ])
     .default("$eq")
     .meta({ type: "enum", baseTradId: "sections.filters.operator" }),
   value: mixed()
     .required()
-    .meta({ type: "string", baseTradId: "sections.filters.value" })
+    .meta({ type: "string", baseTradId: "sections.filters.value" }),
 });

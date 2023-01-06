@@ -1,7 +1,7 @@
 import React from "react";
 import { Textarea } from "@strapi/design-system";
 import { useIntl } from "react-intl";
-import getTrad from "../../utils/getTrad";
+import { getTrad } from "../../../utils/getTrad";
 import { FastField } from "formik";
 
 const TextField = ({ name, baseTradId }) => {
@@ -14,21 +14,21 @@ const TextField = ({ name, baseTradId }) => {
           value={field.value}
           label={formatMessage({
             id: getTrad(`${baseTradId}.label`),
-            defaultMessage: baseTradId
+            defaultMessage: baseTradId,
           })}
           placeholder={formatMessage({
             id: getTrad(`${baseTradId}.placeholder`),
-            defaultMessage: "Your text..."
+            defaultMessage: "Your text...",
           })}
           hint={formatMessage({
             id: getTrad(`${baseTradId}.hint`),
-            defaultMessage: "Your text..."
+            defaultMessage: "Your text...",
           })}
           error={
             meta.error &&
             formatMessage({
               id: getTrad(`${baseTradId}.error`),
-              defaultMessage: "Please enter a valid text."
+              defaultMessage: "Please enter a valid text.",
             })
           }
           onChange={(e) => form.setFieldValue(name, e.target.value)}

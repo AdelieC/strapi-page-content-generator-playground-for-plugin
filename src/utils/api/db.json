@@ -241,5 +241,13 @@
       "id": 3,
       "url": "https://res.cloudinary.com/devlintestor/image/upload/v1664380170/lessaveursdunil/file_umhxtt.jpg"
     }
+  ],
+  "routes": [
+    {
+      "path": "/api/mail/contact"
+    },
+    {
+      "path": "/api/mail/signin"
+    }
   ]
 }

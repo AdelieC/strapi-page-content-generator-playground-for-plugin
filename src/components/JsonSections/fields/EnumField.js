@@ -1,7 +1,7 @@
 import React from "react";
 import { Select, Option } from "@strapi/design-system";
 import { useIntl } from "react-intl";
-import getTrad from "../../utils/getTrad";
+import { getTrad } from "../../../utils/getTrad";
 import { FastField } from "formik";
 
 const EnumField = ({ name, baseTradId, options }) => {
@@ -15,21 +15,21 @@ const EnumField = ({ name, baseTradId, options }) => {
           value={field.value}
           label={formatMessage({
             id: getTrad(`${baseTradId}.label`),
-            defaultMessage: baseTradId
+            defaultMessage: baseTradId,
           })}
           placeholder={formatMessage({
             id: getTrad(`${baseTradId}.placeholder`),
-            defaultMessage: "Your text..."
+            defaultMessage: "Your text...",
           })}
           hint={formatMessage({
             id: getTrad(`${baseTradId}.hint`),
-            defaultMessage: "Your text..."
+            defaultMessage: "Your text...",
           })}
           error={
             meta.error &&
             formatMessage({
               id: getTrad(`${baseTradId}.error`),
-              defaultMessage: "Your text..."
+              defaultMessage: "Your text...",
             })
           }
           onChange={(value) => form.setFieldValue(name, value)}
@@ -39,7 +39,7 @@ const EnumField = ({ name, baseTradId, options }) => {
               <Option key={option} value={option}>
                 {formatMessage({
                   id: getTrad(`${baseTradId}.options.${option}`),
-                  defaultMessage: option
+                  defaultMessage: option,
                 })}
               </Option>
             );

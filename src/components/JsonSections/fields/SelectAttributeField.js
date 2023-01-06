@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Select, Option } from "@strapi/design-system";
 import { useIntl } from "react-intl";
-import getTrad from "../../utils/getTrad";
-import { useDataContext } from "../../utils/providers/DataProvider";
+import { getTrad } from "../../../utils/getTrad";
+import { useDataContext } from "../../../utils/providers/DataProvider";
 import { useFormikContext, useField } from "formik";
 import WaitingForDependency from "../base/informative-tiles/WaitingForDependency";
 import FetchError from "../base/informative-tiles/FetchError";
@@ -13,7 +13,7 @@ const SelectAttributeField = ({ name, baseTradId, target }) => {
   const [field, meta, helpers] = useField(name);
   const { values } = useFormikContext();
   const { formatMessage } = useIntl();
-  const { data } = useDataContext();
+  const { data, fetchData } = useDataContext();
 
   const [attributes, setAttributes] = useState([]);
 
@@ -45,36 +45,43 @@ const SelectAttributeField = ({ name, baseTradId, target }) => {
   };
 
   useEffect(() => {
-    if (values[target]) {
+    if (values[target] && data[dataKey]) {
       setAttributes(getAttributes());
     }
-  }, [values[target]]);
+  }, [values[target], data]);
+
+  useEffect(() => {
+    if (!data[dataKey]) {
+      fetchData(dataKey);
+    }
+  }, [data]);
 
   if (!data[dataKey]?.length) return <FetchError resourceName={dataKey} />;
   if (!target || !values[target])
     return <WaitingForDependency dependencyName={target} />;
+
   return (
     <Select
       name={name}
       value={field.value}
       label={formatMessage({
         id: getTrad(`${baseTradId}.label`),
-        defaultMessage: baseTradId
+        defaultMessage: baseTradId,
       })}
       placeholder={formatMessage({
         id: getTrad(`${baseTradId}.placeholder`),
-        defaultMessage: "Your text..."
+        defaultMessage: "Your text...",
       })}
       error={
         meta.error &&
         formatMessage({
           id: getTrad(`${baseTradId}.error`),
-          defaultMessage: "Please select an attribute..."
+          defaultMessage: "Please select an attribute...",
         })
       }
       hint={formatMessage({
         id: getTrad(`${baseTradId}.hint`),
-        defaultMessage: `Select an attribute from relation ${target}`
+        defaultMessage: `Select an attribute from relation ${target}`,
       })}
       onChange={(value) => helpers.setValue(value)}
     >

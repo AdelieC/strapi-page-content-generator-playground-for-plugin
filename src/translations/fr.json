@@ -114,31 +114,6 @@
         "placeholder": "Entrez un sous-titre",
         "error": "Entrez un sous-titre valide",
         "hint": "Optionnel. Entre 10 et 100 caractères."
-      }
-    },
-    "hero": {
-      "heading": "Section hero",
-      "description": "Créez une section qui prendra tout l'écran (ex : Accueil d'un site), avec une ou des images en fond, ou une couleur, un texte court et des boutons Call to action.",
-      "add": "Ajouter une section hero",
-      "text": {
-        "label": "Votre texte",
-        "placeholder": "Entrez votre texte ici...",
-        "hint": "Ce texte apparaîtra entre le sous-titre et les boutons de cette section.",
-        "error": "Entrez un texte de moins de 1000 caractères."
-      },
-      "buttons": {
-        "heading": "Boutons de la section",
-        "delete": "Supprimer le bouton",
-        "add": "Ajouter un bouton ou lien à la section",
-        "description": "Créez/modifiez les boutons/liens qui apparaîtront sous le texte de la section."
-      },
-      "background-images": {
-        "heading": "Image de fond de la section",
-        "empty": "Pas encore d'image de fond",
-        "label": "Choisissez une image",
-        "placeholder": "Sélectionnez une image pour l'ajouter",
-        "delete": "Retirer l'image",
-        "hint": "Il s'agit de l'image qui s'affichera en fond de la section"
       },
       "background-color": {
         "label": "Choisissez une couleur de fond",
@@ -151,18 +126,61 @@
           "accent": "Accentuée",
           "warning": "Attention"
         }
+      },
+      "buttons": {
+        "heading": "Bouton/lien n°",
+        "delete": "Supprimer le bouton",
+        "add": "Ajouter un bouton ou lien à la section",
+        "description": "Créez/modifiez les boutons/liens qui apparaîtront en haut de la section."
+      }
+    },
+    "hero": {
+      "heading": "Section hero",
+      "description": "Créez une section qui prendra tout l'écran (ex : Accueil d'un site), avec une ou des images en fond, ou une couleur, un texte court et des boutons Call to action.",
+      "add": "Ajouter une section hero",
+      "text": {
+        "label": "Votre texte",
+        "placeholder": "Entrez votre texte ici...",
+        "hint": "Ce texte apparaîtra entre le sous-titre et les boutons de cette section.",
+        "error": "Entrez un texte de moins de 1000 caractères."
+      },
+      "background-image-light": {
+        "empty": "Pas encore d'image de fond pour le thème clair",
+        "label": "Choisissez une image de fond pour le thème clair",
+        "placeholder": "Sélectionnez une image claire",
+        "hint": "Il s'agit de l'image qui s'affichera en fond de la section pour le thème clair"
+      },
+      "content-position-light": {
+        "label": "Choisissez la position du contenu dans la section pour le thème clair",
+        "placeholder": "Sélectionnez une position",
+        "hint": "En fonction de l'image de fond choisie, vous pouvez placer le contenu à gauche, au centre ou à droite de la section",
+        "options": {
+          "left": "À gauche",
+          "center": "Au centre",
+          "right": "À droite"
+        }
+      },
+      "background-image-dark": {
+        "empty": "Pas encore d'image de fond pour le thème sombre",
+        "label": "Choisissez une image pour le thème sombre",
+        "placeholder": "Sélectionnez une image sombre",
+        "hint": "Il s'agit de l'image qui s'affichera en fond de la section pour le thème sombre"
+      },
+      "content-position-dark": {
+        "label": "Choisissez la position du contenu dans la section pour le thème sombre",
+        "placeholder": "Sélectionnez une position",
+        "hint": "En fonction de l'image de fond choisie, vous pouvez placer le contenu à gauche, au centre ou à droite de la section",
+        "options": {
+          "left": "À gauche",
+          "center": "Au centre",
+          "right": "À droite"
+        }
       }
     },
     "list": {
       "add": "Ajouter une section catalogue",
       "heading": "Section catalogue",
       "description": "Créez une section qui listera une de vos collection. Sélectionnez la resource à lister, puis vous pouvez ajouter des filtres, un attribut par lequel grouper les éléments, et un nombre max d'éléments à retourner.",
-      "buttons": {
-        "heading": "Bouton/lien n°",
-        "delete": "Supprimer le bouton",
-        "add": "Ajouter un bouton ou lien à la section",
-        "description": "Créez/modifiez les boutons/liens qui appraîtront en haut de la section."
-      },
       "filters": {
         "heading": "Filtre ajouté n°",
         "delete": "Retirer le filtre",
@@ -185,18 +203,107 @@
         "placeholder": "Entrez un nombre entier",
         "hint": "Nombre d'éléments max qui seront retournés dans la réponse de l'api.",
         "error": "Entrez un nombre entier compris entre 2 et 500"
+      },
+      "style": {
+        "label": "Style des éléments de la liste",
+        "placeholder": "Sélectionnez un style",
+        "error": "Sélectionnez un style valide",
+        "hint": "Les éléments peuvent être affichés sous forme de liste simple avec du texte, ou de grille avec leurs photo.",
+        "options": {
+          "text": "Texte (nom, description, prix)",
+          "thumbnail": "Grille/catalogue avec images"
+        }
+      }
+    },
+    "form": {
+      "add": "Ajouter une section formulaire",
+      "heading": "Section formulaire",
+      "description": "Créez une section qui comprendra un formulaire, ainsi que l'adresse à laquelle envoyer les données du formulaire.",
+      "fields": {
+        "heading": "Champ n°",
+        "delete": "Retirer le champ",
+        "add": "Ajouter un champ au formulaire",
+        "label": {
+          "label": "Label du champ",
+          "placeholder": "Entrer un label",
+          "error": "Label requis",
+          "hint": "Texte descriptif placé au dessus ou devant le champ"
+        },
+        "placeholder": {
+          "label": "Texte de remplissage",
+          "placeholder": "Entrer un texte",
+          "error": "Texte de remplissage requis",
+          "hint": "Texte qui apparaîtra dans le champ s'il est vide. Soit un exemple des valeurs à saisir dans le champ, soit un texte indicatif."
+        },
+        "error-message": {
+          "label": "Message d'erreur",
+          "placeholder": "Entrer un texte",
+          "error": "Message d'erreur requis",
+          "hint": "Message qui s'affichera si le champ est rempli avec des valeurs invalides."
+        },
+        "hint-message": {
+          "label": "Message explicatif",
+          "placeholder": "Entrer un texte",
+          "error": "Message explicatif requis",
+          "hint": "Message qui s'affichera sous le champ pour guider l'utilisateur."
+        },
+        "field-type": {
+          "label": "Type du champ",
+          "placeholder": "Sélectionnez un type",
+          "error": "Type du champ requis",
+          "hint": "Le type dépend du contenu que vous souhaitez récupérer grâce à ce champ.",
+          "options": {
+            "textarea": "Texte long",
+            "text": "Texte court",
+            "tel": "Téléphone",
+            "email": "Email",
+            "checkbox": "Case à cocher",
+            "radio": "Choix",
+            "number": "Nombre"
+          }
+        },
+        "is-required": {
+          "label": "Ce champ est-il requis ?",
+          "on-label": "Oui",
+          "off-label": "Non",
+          "error": "Choisissez une réponse",
+          "hint": "Le formulaire ne pourra être validé sans que l'utilisateur ait rempli et validé ce champ s'il est requis."
+        }
+      },
+      "action": {
+        "label": "Route api à laquelle envoyer les données",
+        "placeholder": "Sélectionnez une route",
+        "error": "Sélectionnez une route valide",
+        "hint": "Le formulaire enverra ses données à cette route lorsque l'utilisateur validera le formulaire."
+      },
+      "method": {
+        "label": "Méthode utilisée pour envoyer les données",
+        "placeholder": "Sélectionnez une méthode",
+        "error": "Sélectionnez une méthode valide",
+        "hint": "Les données peuvent être envoyées via l'url ou via le contenu non visible de la requête.",
+        "options": {
+          "GET": "Dans l'url",
+          "POST": "Dans le corps de la requête"
+        }
+      },
+      "has-captcha": {
+        "label": "Le formulaire doit-il être validé par un captcha ?",
+        "on-label": "Oui",
+        "off-label": "Non",
+        "error": "Choisissez une réponse",
+        "hint": "Pour plus de sécurité lorsqu'un formulaire peut être validé par n'importe qui, vous pouvez ajouter un captcha."
+      },
+      "submit-label": {
+        "label": "Texte du bouton d'envoi",
+        "placeholder": "Entrer un texte",
+        "error": "Texte du bouton requis",
+        "hint": "Texte qui apparaîtra sur le bouton d'envoi du formulaire"
       }
     },
     "gallery": {
       "add": "Ajouter une section d'images",
       "heading": "Section d'images",
       "description": "Créez une section qui pourra comprendre des titres, un texte et une gallerie d'images qui s'affichera sous forme de grille. Vous pouvez également choisir une couleur de fond.",
-      "buttons": {
-        "heading": "Bouton/lien n°",
-        "delete": "Supprimer le bouton",
-        "add": "Ajouter un bouton ou lien à la section",
-        "description": "Créez/modifiez les boutons/liens qui apparaîtront en haut de la section."
-      },
       "text": {
         "label": "Votre texte",
         "placeholder": "Entrez votre texte ici...",
@@ -211,30 +318,12 @@
         "delete": "Retirer l'image",
         "hint": "Ces images seront affichées à côté et sous les textes de la section",
         "error": "Sélectionnez au moins 2 images"
-      },
-      "background-color": {
-        "label": "Choisissez une couleur de fond",
-        "placeholder": "Sélectionnez une couleur",
-        "hint": "Couleur qui s'affichera en fond de cette section",
-        "options": {
-          "primary": "Primaire",
-          "secondary": "Secondaire",
-          "neutral": "Neutre",
-          "accent": "Accentuée",
-          "warning": "Attention"
-        }
       }
     },
     "text": {
       "add": "Ajouter une section de texte",
       "heading": "Section de texte",
       "description": "Créez une section comprenant des titres et sous-titres (optionnels), un texte - un seul bloc - et éventuellement des images qui seront affichées à côté et en dessous. Vous pouvez aussi choisir une couleur de fond.",
-      "buttons": {
-        "add": "Ajouter un bouton ou lien à la section",
-        "delete": "Supprimer le bouton",
-        "heading": "Bouton/lien n°",
-        "description": "Créez/modifiez les boutons/liens qui apparaîtront au bas de la section."
-      },
       "text": {
         "label": "Votre texte",
         "placeholder": "Entrez votre texte ici...",
@@ -248,18 +337,6 @@
         "placeholder": "Sélectionnez une image pour l'ajouter",
         "delete": "Retirer l'image",
         "hint": "Ces images seront affichées à côté et sous les textes de la section"
-      },
-      "background-color": {
-        "label": "Choisissez une couleur de fond",
-        "placeholder": "Sélectionnez une couleur",
-        "hint": "Couleur qui s'affichera en fond de cette section",
-        "options": {
-          "primary": "Primaire",
-          "secondary": "Secondaire",
-          "neutral": "Neutre",
-          "accent": "Accentuée",
-          "warning": "Attention"
-        }
       }
     }
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@strapi/design-system";
-import getTrad from "../../utils/getTrad";
+import { getTrad } from "../../../utils/getTrad";
 import { useIntl } from "react-intl";
 import DynamicIcon from "../base/icons/DynamicIcon";
 import { FieldArray, FastField } from "formik";
@@ -42,7 +42,7 @@ const MultipleField = ({ name, iconName, fields, baseTradId }) => {
                 >
                   {formatMessage({
                     id: getTrad(`${baseTradId}.add`),
-                    defaultMessage: `Add fieldset`
+                    defaultMessage: `Add fieldset`,
                   })}
                 </Button>
               </>

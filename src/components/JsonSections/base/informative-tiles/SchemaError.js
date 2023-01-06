@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import getTrad from "../../../utils/getTrad";
+import { getTrad } from "../../../../utils/getTrad";
 import { useIntl } from "react-intl";
 import { Typography, Stack } from "@strapi/design-system";
 
@@ -11,7 +11,7 @@ const SchemaError = () => {
         {formatMessage({
           id: getTrad(`info.missing-schema`),
           defaultMessage:
-            "Missing or wrong schema key somewhere in /utils/schemas :"
+            "Missing or wrong schema key somewhere in /utils/schemas :",
         })}
       </Typography>
     </Stack>

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Select, Option } from "@strapi/design-system";
 import { useIntl } from "react-intl";
-import getTrad from "../../utils/getTrad";
-import { useDataContext } from "../../utils/providers/DataProvider";
+import { getTrad } from "../../../utils/getTrad";
+import { useDataContext } from "../../../utils/providers/DataProvider";
 import { useField } from "formik";
 import FetchError from "../base/informative-tiles/FetchError";
 
@@ -25,21 +25,21 @@ const SelectCollectionField = ({ name, baseTradId }) => {
       value={field.value}
       label={formatMessage({
         id: getTrad(`${baseTradId}.label`),
-        defaultMessage: baseTradId
+        defaultMessage: baseTradId,
       })}
       placeholder={formatMessage({
         id: getTrad(`${baseTradId}.placeholder`),
-        defaultMessage: "Select a collection"
+        defaultMessage: "Select a collection",
       })}
       hint={formatMessage({
         id: getTrad(`${baseTradId}.hint`),
-        defaultMessage: "Choose a collection from your collection types."
+        defaultMessage: "Choose a collection from your collection types.",
       })}
       error={
         meta.error &&
         formatMessage({
           id: getTrad(`${baseTradId}.error`),
-          defaultMessage: "Please select a value..."
+          defaultMessage: "Please select a value...",
         })
       }
       onChange={(value) => helpers.setValue(value)}

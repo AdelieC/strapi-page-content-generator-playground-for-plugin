@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Select, Option } from "@strapi/design-system";
-import getTrad from "../../../utils/getTrad";
+import { getTrad } from "../../../../utils/getTrad";
 import { useIntl } from "react-intl";
 import { FieldArray, FastField } from "formik";
-import { useDataContext } from "../../../utils/providers/DataProvider";
+import { useDataContext } from "../../../../utils/providers/DataProvider";
 import styled from "styled-components";
 import AccordionLayout from "../../base/AccordionLayout";
 import FetchError from "../../base/informative-tiles/FetchError";
@@ -28,7 +28,7 @@ const imageCanBeAdded = (image, values) => {
   return values?.find((i) => i.id === image.id) === undefined;
 };
 
-const ImagesField = ({ name, baseTradId }) => {
+const SelectMultiple = ({ name, baseTradId }) => {
   const { formatMessage } = useIntl();
   const { data, fetchData } = useDataContext();
 
@@ -43,7 +43,7 @@ const ImagesField = ({ name, baseTradId }) => {
       iconName={"images"}
       heading={formatMessage({
         id: getTrad(`${baseTradId}.heading`),
-        defaultMessage: name
+        defaultMessage: name,
       })}
     >
       <FastField name={name}>
@@ -59,21 +59,21 @@ const ImagesField = ({ name, baseTradId }) => {
                 <Select
                   label={formatMessage({
                     id: getTrad(`${baseTradId}.label`),
-                    defaultMessage: "New image"
+                    defaultMessage: "New image",
                   })}
                   placeholder={formatMessage({
                     id: getTrad(`${baseTradId}.placeholder`),
-                    defaultMessage: "Select an image"
+                    defaultMessage: "Select an image",
                   })}
                   hint={formatMessage({
                     id: getTrad(`${baseTradId}.hint`),
-                    defaultMessage: "Select an image to add it to this section"
+                    defaultMessage: "Select an image to add it to this section",
                   })}
                   error={
                     meta.error &&
                     formatMessage({
                       id: getTrad(`${baseTradId}.error`),
-                      defaultMessage: "Your text..."
+                      defaultMessage: "Your text...",
                     })
                   }
                   onChange={(value) => {
@@ -102,4 +102,4 @@ const ImagesField = ({ name, baseTradId }) => {
   );
 };
 
-export default ImagesField;
+export default SelectMultiple;

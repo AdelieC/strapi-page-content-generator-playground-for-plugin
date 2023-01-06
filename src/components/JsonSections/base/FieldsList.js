@@ -3,7 +3,7 @@ import React, { memo, useEffect } from "react";
 
 import DynamicField from "./DynamicField";
 
-import { useSectionsServiceContext } from "../../utils/providers/SectionsProvider";
+import { useSectionsServiceContext } from "../../../utils/providers/SectionsProvider";
 
 const shouldNotRerender = (oldProps, newProps) => {
   return oldProps.fields === newProps.fields;

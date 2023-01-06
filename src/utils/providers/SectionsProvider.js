@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useMemo, useReducer } from "react";
 
-const SectionsStateContext = createContext({});
+const SectionsStateContext = createContext({ sections: [] });
 const SectionsServiceContext = createContext({});
 
 const reducer = (sections, action) => {
@@ -34,7 +34,9 @@ export const SectionsProvider = ({
 }) => {
   const [sections, dispatch] = useReducer(
     reducer,
-    jsonValue ? JSON.parse(jsonValue) : []
+    jsonValue !== null && JSON.parse(jsonValue)?.length
+      ? JSON.parse(jsonValue)
+      : []
   );
 
   const service = useMemo(() => {

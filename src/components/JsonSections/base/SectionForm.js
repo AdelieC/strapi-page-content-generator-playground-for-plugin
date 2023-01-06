@@ -1,8 +1,8 @@
 import React, { memo, useMemo } from "react";
 import { Stack, Typography, Flex } from "@strapi/design-system";
-import schemas from "../../utils/schemas";
+import schemas from "../../../utils/schemas";
 import { useIntl } from "react-intl";
-import getTrad from "../../utils/getTrad";
+import { getTrad } from "../../../utils/getTrad";
 import { Formik, Form } from "formik";
 import AccordionLayout from "./AccordionLayout";
 import FieldsList from "./FieldsList";
@@ -22,7 +22,7 @@ const SectionForm = ({ id, type, initialValues }) => {
         iconName={type}
         heading={`${formatMessage({
           id: getTrad(`sections.${type}.heading`),
-          defaultMessage: `${type} section `
+          defaultMessage: `${type} section `,
         })}`}
         action={<RemoveSectionButton id={id} />}
       >
@@ -34,7 +34,7 @@ const SectionForm = ({ id, type, initialValues }) => {
           >
             {formatMessage({
               id: getTrad(`sections.${type}.description`),
-              defaultMessage: `Create your own ${type} section`
+              defaultMessage: `Create your own ${type} section`,
             })}
           </Typography>
         </Stack>

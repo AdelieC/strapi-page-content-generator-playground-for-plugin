@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import getTrad from "../../../utils/getTrad";
+import { getTrad } from "../../../../utils/getTrad";
 import { useIntl } from "react-intl";
 import { Typography, Stack } from "@strapi/design-system";
 
@@ -11,7 +11,7 @@ const FetchError = ({ resourceName }) => {
         {`${formatMessage({
           id: getTrad(`info.fetch-error`),
           defaultMessage:
-            "Something went wrong while trying to fetch this resource :"
+            "Something went wrong while trying to fetch this resource :",
         })} ${resourceName}`}
       </Typography>
     </Stack>

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Select, Option } from "@strapi/design-system";
 import { useIntl } from "react-intl";
-import getTrad from "../../utils/getTrad";
-import { useDataContext } from "../../utils/providers/DataProvider";
+import { getTrad } from "../../../utils/getTrad";
+import { useDataContext } from "../../../utils/providers/DataProvider";
 import { useField } from "formik";
 import FetchError from "../base/informative-tiles/FetchError";
 
@@ -11,7 +11,7 @@ const SelectRelationField = ({
   baseTradId,
   source,
   optionsValue,
-  optionsLabel
+  optionsLabel,
 }) => {
   const [field, meta, helpers] = useField(name);
   const { formatMessage } = useIntl();
@@ -29,21 +29,21 @@ const SelectRelationField = ({
       value={field.value}
       label={formatMessage({
         id: getTrad(`${baseTradId}.label`),
-        defaultMessage: baseTradId
+        defaultMessage: baseTradId,
       })}
       placeholder={formatMessage({
         id: getTrad(`${baseTradId}.placeholder`),
-        defaultMessage: "Your text..."
+        defaultMessage: "Your text...",
       })}
       hint={formatMessage({
         id: getTrad(`${baseTradId}.hint`),
-        defaultMessage: "Your text..."
+        defaultMessage: "Your text...",
       })}
       error={
         meta.error &&
         formatMessage({
           id: getTrad(`${baseTradId}.error`),
-          defaultMessage: "Please select a value..."
+          defaultMessage: "Please select a value...",
         })
       }
       onChange={(value) => helpers.setValue(value)}
